@@ -1,0 +1,6 @@
+{
+  "name": "Aetherius Sovereign Betting Empire",
+  "description": "Elite institutional-grade global sports, casino, and quantitative investment betting empire (الرهانات الاستثمارية) featuring Provably Fair SHA-256 cryptographic verification, live high-liquidity arenas, encrypted treasury vaults, and VIP prestige rewards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

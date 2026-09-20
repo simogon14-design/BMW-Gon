@@ -1,0 +1,522 @@
+@import "tailwindcss";
+@import "./styles/globals.css";
+
+@layer base {
+  :root {
+    --font-heading: 'Cinzel', serif, system-ui;
+    --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-arabic: 'Cairo', 'Tajawal', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #010306;
+    background-image: 
+      radial-gradient(ellipse at 50% 12%, rgba(255, 215, 0, 0.15) 0%, transparent 65%),
+      radial-gradient(ellipse at 85% 10%, rgba(255, 107, 0, 0.10) 0%, transparent 45%),
+      radial-gradient(ellipse at 15% 12%, rgba(255, 215, 0, 0.12) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 60%, rgba(3, 5, 10, 0.88) 0%, rgba(1, 3, 6, 0.99) 100%),
+      radial-gradient(ellipse at 20% 90%, rgba(255, 215, 0, 0.06) 0%, transparent 40%);
+    background-attachment: fixed;
+    color: #f1f5f9;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+    text-align: right;
+  }
+
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] .font-luxury {
+    font-family: var(--font-arabic) !important;
+    font-weight: 800;
+  }
+
+  h1, h2, h3, .font-luxury {
+    font-family: var(--font-heading);
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum";
+  }
+
+  /* Zero-Latency Touch Response across mobile devices */
+  button, input, select, a, [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+/* Device Dynamic Auto-Adaptation: OLED Pure Black Mode */
+.oled-mode body {
+  background-color: #000000 !important;
+  background-image: none !important;
+}
+
+.oled-mode .cyber-glass,
+.oled-mode .cyber-glass-card,
+.oled-mode .frosted-comfort {
+  background: rgba(0, 0, 0, 0.95) !important;
+  border-color: rgba(255, 215, 0, 0.35) !important;
+}
+
+.oled-mode .border-white\/5,
+.oled-mode .border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 215, 0, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Neon Cyber Glows */
+.glow-gold {
+  box-shadow: 0 0 25px -5px rgba(255, 215, 0, 0.35);
+}
+.glow-gold-sm {
+  box-shadow: 0 0 12px -2px rgba(255, 215, 0, 0.25);
+}
+.glow-cyan {
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.35);
+}
+.glow-crimson {
+  box-shadow: 0 0 25px -5px rgba(239, 68, 68, 0.35);
+}
+.glow-emerald {
+  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35);
+}
+
+/* Glassmorphism surfaces 3.0 & Ergonomic Comfort - Ultra-Transparency Cyber Glassmorphism */
+.frosted-comfort {
+  background: rgba(2, 4, 8, 0.16);
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
+  border: 1px solid rgba(255, 223, 0, 0.55);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.95), 0 0 28px -5px rgba(255, 215, 0, 0.25);
+}
+
+.border-metallic-subtle {
+  border: 1px solid rgba(255, 223, 0, 0.45);
+}
+
+.cyber-glass {
+  background: rgba(2, 4, 8, 0.15);
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
+  border: 1px solid rgba(255, 223, 0, 0.45);
+}
+
+.cyber-glass-gold {
+  background: linear-gradient(135deg, rgba(24, 18, 6, 0.20), rgba(2, 4, 8, 0.24));
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
+  border: 1px solid rgba(255, 223, 0, 0.60);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.95), 0 0 35px -5px rgba(255, 215, 0, 0.35);
+}
+
+.cyber-glass-card {
+  background: linear-gradient(180deg, rgba(5, 8, 16, 0.16) 0%, rgba(2, 4, 8, 0.22) 100%);
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
+  border: 1px solid rgba(255, 223, 0, 0.50);
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.92), 0 0 25px -5px rgba(255, 215, 0, 0.18);
+}
+
+.cyber-glass-card:hover {
+  border-color: rgba(255, 223, 0, 0.85);
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.98), 0 0 45px -5px rgba(255, 215, 0, 0.45);
+}
+
+/* Ultra-Transparent Glass Panels & Modals */
+.ultra-glass-panel {
+  background: rgba(2, 4, 8, 0.16);
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
+  border: 1px solid rgba(255, 223, 0, 0.50);
+}
+
+.ultra-glass-modal {
+  background: rgba(2, 4, 8, 0.22);
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
+  border: 1px solid rgba(255, 223, 0, 0.60);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.98), 0 0 50px -5px rgba(255, 215, 0, 0.3);
+}
+
+/* Glass Pill Capsules with Embedded Diamond Accents */
+.glass-pill-capsule {
+  background: linear-gradient(180deg, rgba(10, 15, 28, 0.18) 0%, rgba(2, 4, 8, 0.24) 100%);
+  backdrop-filter: blur(48px);
+  -webkit-backdrop-filter: blur(48px);
+  border: 1px solid rgba(255, 223, 0, 0.55);
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.9), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* 3D Tactile Golden Buttons with Specular Highlights & Electric Neon-Gold Gradients */
+.btn-tactile-gold {
+  background: linear-gradient(180deg, #FFDF00 0%, #FFA500 45%, #FF8C00 80%, #995500 100%);
+  color: #020406;
+  font-weight: 800;
+  border: 1px solid #FFF8C4;
+  box-shadow: 
+    0 6px 22px -2px rgba(255, 165, 0, 0.65),
+    0 10px 25px -5px rgba(0, 0, 0, 0.9),
+    0 0 25px rgba(255, 215, 0, 0.35),
+    inset 0 2px 2px rgba(255, 255, 255, 0.9),
+    inset 0 -3px 4px rgba(120, 70, 0, 0.7);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translate3d(0, 0, 0);
+  will-change: transform, box-shadow;
+}
+
+.btn-tactile-gold:hover:not(:disabled) {
+  background: linear-gradient(180deg, #FFF099 0%, #FFB733 45%, #FFA500 80%, #B36600 100%);
+  box-shadow: 
+    0 8px 32px rgba(255, 165, 0, 0.85),
+    0 12px 30px rgba(0, 0, 0, 0.95),
+    0 0 35px rgba(255, 215, 0, 0.55),
+    inset 0 2px 3px rgba(255, 255, 255, 0.98);
+  transform: translate3d(0, -2px, 0);
+}
+
+.btn-tactile-gold:active:not(:disabled) {
+  transform: translate3d(0, 2px, 0);
+  box-shadow: 
+    0 2px 12px rgba(255, 165, 0, 0.5),
+    inset 0 2px 4px rgba(0, 0, 0, 0.75);
+}
+
+/* 3D Tactile Sapphire / Emerald / Ruby Buttons */
+.btn-tactile-sapphire {
+  background: linear-gradient(180deg, #60A5FA 0%, #2563EB 35%, #1D4ED8 85%, #1E3A8A 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  border: 1px solid #93C5FD;
+  box-shadow: 
+    0 6px 20px -2px rgba(37, 99, 235, 0.5),
+    0 10px 25px -5px rgba(0, 0, 0, 0.7),
+    inset 0 2px 2px rgba(255, 255, 255, 0.65),
+    inset 0 -3px 4px rgba(15, 23, 42, 0.6);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translate3d(0, 0, 0);
+}
+
+.btn-tactile-sapphire:hover:not(:disabled) {
+  transform: translate3d(0, -2px, 0);
+  box-shadow: 0 8px 28px rgba(37, 99, 235, 0.75), inset 0 2px 3px rgba(255, 255, 255, 0.85);
+}
+
+.btn-tactile-sapphire:active:not(:disabled) {
+  transform: translate3d(0, 2px, 0);
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4), inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Gold Sweep Reflection Animation */
+@keyframes goldSweep {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+  }
+  50%, 100% {
+    transform: translateX(250%) skewX(-25deg);
+  }
+}
+
+.gold-sweep-reflection {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-sweep-reflection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.25), transparent);
+  animation: goldSweep 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Pulsating Neon Rim Lights */
+@keyframes neonRimPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px -2px rgba(255, 215, 0, 0.3), inset 0 0 15px -4px rgba(255, 215, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px 4px rgba(255, 215, 0, 0.6), inset 0 0 20px -2px rgba(255, 215, 0, 0.4);
+  }
+}
+
+.neon-rim-pulse {
+  animation: neonRimPulse 3s ease-in-out infinite;
+}
+
+/* Cyber Illuminated Corner Brackets */
+.cyber-corner-brackets {
+  position: relative;
+}
+
+.cyber-corner-brackets::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid #FFD700;
+  border-left: 2px solid #FFD700;
+  filter: drop-shadow(0 0 4px #FFD700);
+  pointer-events: none;
+}
+
+.cyber-corner-brackets::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-bottom: 2px solid #FFD700;
+  border-right: 2px solid #FFD700;
+  filter: drop-shadow(0 0 4px #FFD700);
+  pointer-events: none;
+}
+
+/* Gold Gradient Shimmers */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF099 0%, #FFD700 50%, #CCA000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-silver-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #CBD5E1 60%, #94A3B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 4s ease-in-out infinite;
+}
+
+/* Arabic Luxury Fonts & Styling */
+.font-arabic {
+  font-family: 'Cairo', 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Deep Obsidian Royal Navy with Currency & Diamond Tiled Watermark - Ultra-Transparent Glassmorphism */
+.bg-royal-obsidian {
+  background-color: rgba(8, 14, 24, 0.42);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  background-image: radial-gradient(circle at 50% 20%, rgba(30, 58, 138, 0.15), transparent 70%),
+    url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.035' font-family='sans-serif' font-size='14' font-weight='bold'%3E%3Ctext x='10' y='28'%3E$%3C/text%3E%3Ctext x='70' y='32'%3E€%3C/text%3E%3Ctext x='25' y='85'%3E¥%3C/text%3E%3Ctext x='75' y='92' font-size='11'%3Eد.م.%3C/text%3E%3Cpath d='M45 40 L50 32 L55 40 L50 48 Z' /%3E%3Cpath d='M105 75 L110 68 L115 75 L110 82 Z' /%3E%3Cpath d='M95 15 L98 10 L101 15 L98 20 Z' /%3E%3Cpath d='M15 105 L19 99 L23 105 L19 111 Z' /%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* 3D Crystalline Sapphire Blue Gemstone Button with Gold Border */
+.btn-sapphire-3d {
+  background: linear-gradient(180deg, #3B82F6 0%, #1D4ED8 45%, #1E3A8A 100%);
+  box-shadow: 0 4px 18px rgba(30, 64, 175, 0.65), 0 0 12px rgba(212, 175, 55, 0.35), inset 0 2px 2px rgba(255, 255, 255, 0.5), inset 0 -3px 5px rgba(0, 0, 0, 0.5);
+  border: 1.5px solid #F59E0B;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-sapphire-3d:hover:not(:disabled) {
+  background: linear-gradient(180deg, #60A5FA 0%, #2563EB 45%, #1D4ED8 100%);
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.85), 0 0 16px rgba(255, 215, 0, 0.5), inset 0 2px 3px rgba(255, 255, 255, 0.7);
+  transform: translateY(-1px);
+}
+.btn-sapphire-3d:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(30, 64, 175, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Metallic 3D Chips */
+.chip-gold-3d {
+  background: radial-gradient(circle at 35% 30%, #FFF3B0 0%, #FFD700 35%, #C99700 70%, #684B00 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 2px 3px rgba(255, 255, 255, 0.8), inset 0 -2px 3px rgba(0, 0, 0, 0.6);
+  border: 1.5px dashed rgba(255, 255, 255, 0.45);
+}
+.chip-silver-3d {
+  background: radial-gradient(circle at 35% 30%, #FFFFFF 0%, #E2E8F0 35%, #94A3B8 70%, #334155 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 2px 3px rgba(255, 255, 255, 0.9), inset 0 -2px 3px rgba(0, 0, 0, 0.6);
+  border: 1.5px dashed rgba(255, 255, 255, 0.5);
+}
+.chip-bronze-3d {
+  background: radial-gradient(circle at 35% 30%, #FED7AA 0%, #F97316 35%, #C2410C 70%, #431407 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 2px 3px rgba(255, 255, 255, 0.75), inset 0 -2px 3px rgba(0, 0, 0, 0.6);
+  border: 1.5px dashed rgba(255, 255, 255, 0.45);
+}
+
+/* Metallic Gold Bevel Adjusters */
+.btn-gold-adjuster {
+  background: radial-gradient(circle at 35% 30%, #FFFBEB 0%, #FDE047 30%, #CA8A04 75%, #713F12 100%);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.8), inset 0 -2px 2px rgba(0, 0, 0, 0.5);
+  border: 1px solid #FEF08A;
+}
+.btn-gold-adjuster:active {
+  transform: scale(0.94);
+}
+
+/* Dynamic CSS Keyframe Gold Particle Celebrations */
+@keyframes goldParticlePop {
+  0% {
+    transform: translate(0, 0) scale(0.2) rotate(0deg);
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(1.15) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+@keyframes goldCoinSpinFloat {
+  0% {
+    transform: translateY(0) scale(0.4) rotateY(0deg);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-80px) scale(1.1) rotateY(360deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-160px) scale(0.9) rotateY(720deg);
+    opacity: 0;
+  }
+}
+
+@keyframes goldFlashShimmer {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+
+.gold-particle-pop {
+  animation: goldParticlePop 1.3s cubic-bezier(0.12, 0.8, 0.32, 1) forwards;
+}
+
+.gold-coin-spin-float {
+  animation: goldCoinSpinFloat 1.8s cubic-bezier(0.16, 0.8, 0.25, 1) forwards;
+}
+
+.gold-flash-shimmer {
+  animation: goldFlashShimmer 0.9s ease-out forwards;
+}
+
+/* PWA Mobile Optimization & 60fps GPU Acceleration */
+.touch-pan-x {
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+}
+
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.safe-area-bottom {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+.transform-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* 3D Spatial Engine & Multi-Layered Depth Shaders */
+.perspective-1200 {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.card-3d-tactile {
+  transform-style: preserve-3d;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease-out, border-color 0.22s ease-out;
+  will-change: transform, box-shadow;
+}
+
+.card-3d-tactile:hover {
+  transform: translateY(-8px) rotateX(2deg) rotateY(-1.5deg) translateZ(12px);
+  box-shadow: 
+    0 24px 48px -12px rgba(0, 0, 0, 0.95),
+    0 0 35px 2px rgba(255, 215, 0, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 215, 0, 0.55);
+}
+
+.gold-specular-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-specular-sheen::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 242, 163, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gold-specular-sheen:hover::before {
+  opacity: 1;
+}
+
+/* 3D Depth Layer Z-translations */
+.translate-z-10 {
+  transform: translateZ(10px);
+}
+.translate-z-20 {
+  transform: translateZ(20px);
+}
+.translate-z-30 {
+  transform: translateZ(30px);
+}
+
+

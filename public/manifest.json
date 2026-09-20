@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "Aetherius Sovereign Betting Empire",
+  "short_name": "Aetherius",
+  "description": "Elite institutional-grade global sports and casino betting empire featuring Provably Fair SHA-256 cryptographic verification, live high-liquidity arenas, encrypted treasury vaults, and VIP prestige rewards.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#080A0F",
+  "theme_color": "#080A0F",
+  "categories": ["entertainment", "games"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

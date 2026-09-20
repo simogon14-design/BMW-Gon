@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF2A3"/>
+      <stop offset="35%" stop-color="#FFD700"/>
+      <stop offset="70%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#996515"/>
+    </linearGradient>
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#141E33"/>
+      <stop offset="80%" stop-color="#070A12"/>
+      <stop offset="100%" stop-color="#020307"/>
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="512" height="512" rx="112" fill="url(#bg-grad)"/>
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="url(#gold-grad)" stroke-width="4" stroke-opacity="0.5"/>
+
+  <!-- Inner Ambient Glow Circle -->
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#FFD700" stroke-width="1.5" stroke-opacity="0.25" stroke-dasharray="8 6"/>
+
+  <!-- Sovereign Crown & Eagle Motif -->
+  <g filter="url(#glow)">
+    <!-- Crown -->
+    <path d="M 180 180 L 210 230 L 256 160 L 302 230 L 332 180 L 342 260 L 170 260 Z" fill="url(#gold-grad)"/>
+    <circle cx="180" cy="175" r="7" fill="#FFF2A3"/>
+    <circle cx="256" cy="155" r="9" fill="#FFF2A3"/>
+    <circle cx="332" cy="175" r="7" fill="#FFF2A3"/>
+
+    <!-- Royal Eagle Wings -->
+    <path d="M 256 265 C 210 265 140 290 100 360 C 135 365 180 345 220 320 L 256 380 L 292 320 C 332 345 377 365 412 360 C 372 290 302 265 256 265 Z" fill="url(#gold-grad)"/>
+    <!-- Diamond Emblem -->
+    <polygon points="256,280 278,310 256,340 234,310" fill="#070A12" stroke="url(#gold-grad)" stroke-width="3"/>
+    <circle cx="256" cy="310" r="5" fill="#FFD700"/>
+  </g>
+</svg>
